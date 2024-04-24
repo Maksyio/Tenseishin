@@ -1,10 +1,9 @@
 import numpy as np
-import scipy as sp
 
 # Define the number of points in each direction
 n_p = 10
 
-def CreatePoints(n_p):
+def Create(n_p):
     # Define X, Y, and Z arrays for the positive octant (1st octant)
     X_positive = np.arange(0, n_p)
     Y_positive = np.arange(0, n_p)
@@ -37,30 +36,48 @@ def CreatePoints(n_p):
     all_points = np.concatenate((positive_points, negative_points))
     return all_points
 
-def Init_Field(all_points):
-    associated_arrays = []
-    for point in all_points:
+def Initialise(array):
+    p_arrays = []
+    for point in array:
         # Calculate the magnitude from the coordinates of the point
-        magnitude = np.linalg.norm([point['x'], point['y'], point['z']])
-        
-        # Create an associated array for each point
-        associated_array = np.array(dtype=[('m', float, 3)], dtype=[('d', float, 3)])
-        associated_arrays.append(associated_array)
-    return associated_arrays
+        direction = np.array([0, 0, 0])
+        magnitude = 0
+        # Create an associated array for each point with magnitude included
+        p_array = np.array([(direction, magnitude)], dtype=[('d', float, 3), ('magnitude', float)])
+        p_arrays.append(p_array)
+    return p_arrays
+
+def E_Field(Q, q, x, points, p_arrays):
+    # Convert x to a NumPy array
+    x = np.array(x)
+    for point, p_array in zip(points, p_arrays):
+        # Convert point to a tuple or list
+        point_tuple = (point['x'], point['y'], point['z'])
+        # Calculate the vector between the charge Q and q
+        r = x - np.array(point_tuple)
+        # Calculate the magnitude and direction only if r is non-zero
+        if np.linalg.norm(r) != 0:
+            magnitude = 1/(4 * np.pi * 35.4167 * 0.000000000001) * Q * q * 1/(np.linalg.norm(r)) ** 2
+            direction = r/(np.linalg.norm(r))
+        else:
+            magnitude = 0
+            direction = np.array([0, 0, 0])
+        # Update the associated array for the current point
+        p_array['d'] = direction
+        p_array['magnitude'] = magnitude
+        #introduce an if statement, so that, if all vectors are extremely large or extremely small, they will be reduced/increased to a reasonable size
+    return p_arrays
 
 
+points = Create(n_p)
+p_arrays = Initialise(points)
+p_arrays = E_Field(1, 1, [(1, 0, 0)], points, p_arrays)
 
-# Generate all_points
-all_points = CreatePoints(n_p)
-
-# Create associated arrays for each point in all_points
-associated_arrays = Init_Field(all_points)
 
 # Example usage:
-for point, associated_array in zip(all_points, associated_arrays):
+for point, p_array in zip(points, p_arrays):
     print("Point:", point)
-    print("Associated Array:", associated_array)
+    print("Associated Array:", p_array)
 
-# Define Electric Field
-# def E_field(Charge):
-#    for point in all_points:
+
+
