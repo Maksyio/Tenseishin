@@ -47,7 +47,7 @@ def Initialise(array):
         p_arrays.append(p_array)
     return p_arrays
 
-def E_Field(Q, q, x, points, p_arrays):
+def E_Field(Q, x, points, p_arrays):
     # Convert x to a NumPy array
     x = np.array(x)
     for point, p_array in zip(points, p_arrays):
@@ -57,7 +57,7 @@ def E_Field(Q, q, x, points, p_arrays):
         r = x - np.array(point_tuple)
         # Calculate the magnitude and direction only if r is non-zero
         if np.linalg.norm(r) != 0:
-            magnitude = 1/(4 * np.pi * 35.4167 * 0.000000000001) * Q * q * 1/(np.linalg.norm(r)) ** 2
+            magnitude = 1/(4 * np.pi * 35.4167 * 0.000000000001) * Q * 1/(np.linalg.norm(r)) ** 2
             direction = r/(np.linalg.norm(r))
         else:
             magnitude = 0
@@ -68,15 +68,58 @@ def E_Field(Q, q, x, points, p_arrays):
         #introduce an if statement, so that, if all vectors are extremely large or extremely small, they will be reduced/increased to a reasonable size
     return p_arrays
 
-
-points = Create(n_p)
-p_arrays = Initialise(points)
-p_arrays = E_Field(1, 1, [(1, 0, 0)], points, p_arrays)
-
-with open('output.txt', 'w') as file:
-    for point, p_array in zip(points, p_arrays):
-        file.write("Point: {}\n".format(point))
-        file.write("Point Data: {}\n".format(p_array))
-
-
 # ------------------------------------- EDIT THIS CODE TO MAKE IT UPDATE E_FIELD IN REAL TIME ------------------------------------------------------------ 
+
+dt = 0.01 #seconds
+t_interval = 10 #seconds
+#now the charge Q will be have a position that is changing every dt in t_interval, the following function will create the array of positions that the electron will have across the interval t_interval
+
+def position(dt, t_interval):
+    positions = []
+    p_initial = (0, 0, -10)
+    p_final = (0, 0, 10)
+    
+    # Calculate the displacement between p_initial and p_final
+    displacement = tuple((f - i) / (t_interval / dt) for i, f in zip(p_initial, p_final))
+    
+    # Generate positions at regular intervals
+    for i in range(int(t_interval / dt) + 1):
+        x = p_initial[0] + displacement[0] * i
+        y = p_initial[1] + displacement[1] * i
+        z = p_initial[2] + displacement[2] * i
+        positions.append((x, y, z))
+    
+    return positions
+#define a new function that will use both functions E_field() and Position() to generate a new set of data for every dt - think about how to optimise this function to not take up lots of space
+
+def update_E_Field(dt, positions, p_arrays):
+    for position in positions:
+        vector = position
+        p_arrays = E_Field(1, [vector], points, p_arrays)
+    return p_arrays
+
+def save_to_file(filename, points, p_arrays):
+    with open(filename, 'a') as file:  # Append mode to add data for each time step
+        for point, p_array in zip(points, p_arrays):
+            file.write("Point: {}\n".format(point))
+            file.write("Point Data: {}\n".format(p_array))
+        file.write("\n")  # Add a newline to separate data for each time step
+
+filename = 'FieldAroundElectron.txt'
+
+# Create points
+points = Create(n_p)
+
+# Initialize p_arrays
+p_arrays = Initialise(points)
+
+# Initial data saving
+save_to_file(filename, points, p_arrays)
+
+#  ------------------------------------------------------------------------------------- DO NOT RUN WITH THIS. YOU WILL CREATE A FILE EXCEEDING 10GB ---------------------------------------------------------------------------------------------------------
+ 
+# Update and save data for each time step 
+# positions = position(dt, t_interval)
+# for position in positions:
+#    p_arrays = update_E_Field(dt, [position], p_arrays)
+#    save_to_file(filename, points, p_arrays)
