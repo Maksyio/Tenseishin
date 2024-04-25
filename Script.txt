@@ -1,2 +1,62 @@
 Electric and Magnetic fields of discrete charges
 
+intro - 
+
+discrete charges - electric charge concentrated in one point in space
+
+Lets begin with a stationary charge isolated in space - specifically an electron
+This particle is fixed in position and has a negative charge 
+By giving it a charge, an electric field is created around them
+This can be shown visually using either a vector field or field lines
+an electric field is the region around the charged particle where a force is exerted on other charged particles and the force experienced can be defined as: 
+E= F / Q
+where E = 
+F = 
+q = 
+
+Field lines are visual aids which help represent the strength and direction of the electric field.
+The strength of the electric field is indicated by how close the lines are.
+The closer together the lines, the stronger the field.
+the direction of the field lines show the direction of the electric field
+In this case they are pointing inwards
+a vector field uses a collection of arrows each assigned magnitudes and directions attached to points in a plane,
+
+Now lets consider 2 stationary charges (electron + proton or 2 electrons idk)
+Coulombs law applies as when two of these stationary charges are present they experience an electrostatic force which is simply the force they experince due to their charges.
+like charges experience a repulsive force whilst opposite charges attract
+
+The law applies states that the magnitude of electrostatic force between two point charges (q1 and q2) is proportional to the product of their charges and inversely proportional to the square of the distance.
+
+F= k (q1 . q2) / r^2
+Where F = 
+k =
+q = 
+r = 
+
+coulombs law is fundamental for understanding how charges interact
+
+lets go back to a single charged particle, but give it some velocity
+the motion of the charged particle (or replace w electron) results in a magnetic field around the particle. 
+
+A magnetic field is the region where a charged particle or magnetic material
+experiences a magnetic force. 
+similarly to the electric field the field lines/vector field show the strength and direction
+
+The magnetic force is given by: 
+F = qv x B
+where F = 
+B = 
+q = 
+v =
+
+Biot savarts law 
+
+
+EM
+Lorentz law
+accelerating charge
+
+APPLICATIONS
+
+
+
