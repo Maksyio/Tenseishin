@@ -1,62 +1,94 @@
 Electric and Magnetic fields of discrete charges
 
 intro - 
+stationary 
+moving
+accelerating
+applications
 
 discrete charges - electric charge concentrated in one point in space
 
+STATIONARY CHARGES
+_____________________________________________________________________________________________________________________________________________________________________________
 Lets begin with a stationary charge isolated in space - specifically an electron
-This particle is fixed in position and has a negative charge 
-By giving it a charge, an electric field is created around them
-This can be shown visually using either a vector field or field lines
-an electric field is the region around the charged particle where a force is exerted on other charged particles and the force experienced can be defined as: 
-E= F / Q
-where E = 
-F = 
-q = 
+This particle is fixed in position and has a negative charge and are often referred to as electric monopoles
+Electric fields arise from these electric monopoles, where positive charges produce electric fields that radiate outward, and negative charges produce electric fields that radiate inward
+
+By giving it a negative charge, an electric field is created around them
+An electric field is the region around the charged particle where a force is exerted on other charged particles and the force experienced can be defined as: 
+E = F / Q
+where E is the electric field , F is the electric force and Q is the charge.
 
 Field lines are visual aids which help represent the strength and direction of the electric field.
-The strength of the electric field is indicated by how close the lines are.
-The closer together the lines, the stronger the field.
-the direction of the field lines show the direction of the electric field
-In this case they are pointing inwards
-a vector field uses a collection of arrows each assigned magnitudes and directions attached to points in a plane,
+The strength of the electric field is indicated by how close the lines are. The closer together the lines, the stronger the field.
+the direction of the field lines show the direction of the electric field. In this case they are pointing inwards
+a vector field uses a collection of arrows each assigned magnitudes and directions attached to points in a plan
 
+In addition, the electric potential can be determined.
+Electric potential can be thought of as a measure of the "push" or "pull" that a charged particle would experience if placed at that point in the electric field.
+V = − ∫ E . dr 
+where V is ...
+the equation states that the change in electric potential between two points in space is equal to the negative of the work done per unit charge by the electric field in moving a charge from one point to the other.
+
+2 STATIONARY CHARGES
+_____________________________________________________________________________________________________________________________________________________________________________
 Now lets consider 2 stationary charges (electron + proton or 2 electrons idk)
 Coulombs law applies as when two of these stationary charges are present they experience an electrostatic force which is simply the force they experince due to their charges.
 like charges experience a repulsive force whilst opposite charges attract
 
 The law applies states that the magnitude of electrostatic force between two point charges (q1 and q2) is proportional to the product of their charges and inversely proportional to the square of the distance.
 
-F= k (q1 . q2) / r^2
-Where F = 
-k =
-q = 
-r = 
+F= k (q1 . q2) rhat / r^2
+Where F is the force, k is the ...
 
-coulombs law is fundamental for understanding how charges interact
+Coulombs law is fundamental for understanding how charges interact
+therefore to find the electric field strngth, we would substitute in the expression of F into the formula E = F/Q to get 
 
-lets go back to a single charged particle, but give it some velocity
+Another key concept is Gauss' law:
+Gauss’s law for electric fields states that the electric flux through a closed surface is proportional to the charge enclosed by it. For charges/surfaces in free space, the constant of proportionality is 1/ϵ0, and so mathematically this can be stated as:
+Φ = Q_encl / ϵ_0 = ∮ E . dA
+This will prove more significant later on
+
+MOVING CHARGE
+_____________________________________________________________________________________________________________________________________________________________________________
+now lets go back to a single charged particle, but give it some velocity
 the motion of the charged particle (or replace w electron) results in a magnetic field around the particle. 
 
-A magnetic field is the region where a charged particle or magnetic material
-experiences a magnetic force. 
+A magnetic field is the region where a charged particle or magnetic material experiences a magnetic force. 
 similarly to the electric field the field lines/vector field show the strength and direction
 
-The magnetic force is given by: 
-F = qv x B
-where F = 
-B = 
-q = 
-v =
+Here, Biot and svarts law applies and tells us that the magnetic field B at a point in space due to a moving charge is proportional to the velocity v of the charge, the charge q, and the distance r from the charge to the point where the magnetic field is being calculated.
 
-Biot savarts law 
+B = (4π / μ_0 ) (q * v x r) / r^2​
+where ... 
+where B is the force, q is the charge, v is the ...
 
+unlike the electric force, magnetic monopoles are yet to exist but instead the magnetic field form continuous closed loops.
+consequently, the magnetic flux out of a closed surface is always equal to zero. Therefore, Gauss’s lawfor magnetic fields:
+is |B · dA = 0
 
-EM
-Lorentz law
-accelerating charge
+! ((brief explanation on RHR? and how to detemine direction of fields ))
+
+when considering moving charges, it also important to consider two further concepts:
+
+! Ampère's Law describes the relationship between the magnetic field (B) along a closed loop and the total electric current passing through any surface bounded by the loop.
+
+! Faraday's Law states that a changing magnetic flux through a surface induces an electromotive force in any closed loop bounding that surface
+
+In combination, these 4 collective equations are known as Maxwell's equations, providing the ultimate framework for understanding the behavior of electric and magnetic fields and their interactions. 
+
+! (The Lorentz Force (Electromagnetic Force) is the force experienced by moving charged objects through electric and magnetic fields. The Lorentz Force is given by:
+F = qE + qv × B
+Tthe electromagnetic force is one of the 4 fundamental forces that govern the behaviour and nature of particles
+
+ACCELERATING CHARGE
+_____________________________________________________________________________________________________________________________________________________________________________
+So what about an accelerating charge?
+When charged particles undergo acceleration, they are constantly changing veolcity over time which in turn results in changing electric fields, which in turn produces perpendicular changing magnetic fields (to conerve energy and momentum) , according to Maxwell's equations.
+
+Electromagnetic waves consist of oscillating electric and magnetic fields propagating through space 
+Therefore, light is produced!
+
 
 APPLICATIONS
-
-
-
+tbd
