@@ -10,19 +10,20 @@ discrete charges - electric charge concentrated in one point in space
 
 STATIONARY CHARGES
 _____________________________________________________________________________________________________________________________________________________________________________
-Lets begin with a stationary charge isolated in space - specifically an electron
-This particle is fixed in position and has a negative charge and are often referred to as electric monopoles
+When we refer to a physical quantity as being discrete, we usually mean that it has no distribution over any space, or continuity. A discrete charge is simply a point charge, which an electron (in free space) can be approximated to.
+So, lets begin there; with a stationary, isolated electron.
+a discrete charge such as our electron is often referred to as an electric monopole.
 Electric fields arise from these electric monopoles, where positive charges produce electric fields that radiate outward, and negative charges produce electric fields that radiate inward
 
 By giving it a negative charge, an electric field is created around them
-An electric field is the region around the charged particle where a force is exerted on other charged particles and the force experienced can be defined as: 
+For a discrete charge, the electric field is the region around it where a force would be exerted on other charged particles if they were present. This force follows an inverse square law, and is a result of coulombs Law.
 E = F / Q
 where E is the electric field , F is the electric force and Q is the charge.
 
 Field lines are visual aids which help represent the strength and direction of the electric field.
 The strength of the electric field is indicated by how close the lines are. The closer together the lines, the stronger the field.
 the direction of the field lines show the direction of the electric field. In this case they are pointing inwards
-a vector field uses a collection of arrows each assigned magnitudes and directions attached to points in a plan
+computationally, we can illustrate the electric field using vectors, evaluating it for each point in an arbitrary 3D space. 
 
 In addition, the electric potential can be determined.
 Electric potential can be thought of as a measure of the "push" or "pull" that a charged particle would experience if placed at that point in the electric field.
